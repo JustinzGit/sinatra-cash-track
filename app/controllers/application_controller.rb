@@ -6,4 +6,8 @@ class ApplicationController < Sinatra::Base
     set :public_folder, "public"
     register Sinatra::Flash
   end
+
+  get '/' do
+    erb :index
+  end 
 end
