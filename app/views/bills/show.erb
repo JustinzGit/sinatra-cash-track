@@ -1,8 +1,10 @@
-<a href="/bills/new">Add Bill</a>
 <h1>Current Bills</h1>
-<% @user.bills.each do |bill| %>
-  <p>Provider: <% bill.provider %></p>
-  <p>Balance: <% bill.balance %></p>
-  <p>Due: <% bill.duedate %></p>
+<a href="/bills/new">Add Bill</a>
+<p>-------------------------------------------</p>
+<% current_user.bills.each do |bill| %>
+  <p>Provider: <%= bill.provider %></p>
+  <p>Balance: <%= bill.balance %></p>
+  <p>Due: <%= bill.duedate %></p>
   <a href="/bills/<%= bill.id %>/edit">Edit Bill</a>
+  <p>-------------------------------------------</p>
 <% end %>
