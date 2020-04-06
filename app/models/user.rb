@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
   # Macro from active record that provides password functionality
   # Given access to authenticate method from activerecord that relies on Bcrypt
   has_secure_password
+
+  def slug
+    username.downcase + "-" + id.to_s
+  end 
 end
