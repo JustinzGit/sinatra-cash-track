@@ -8,7 +8,11 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-    erb :index
+    if logged_in?
+      redirect "/users/#{current_user.slug}"
+    else
+      erb :index
+    end 
   end
 
   helpers do
@@ -23,7 +27,7 @@ class ApplicationController < Sinatra::Base
     def redirect_if_not_logged_in
       if !logged_in?
         flash[:warning] = "You must be logged in!"
-      end 
+      end
     end
   end
 end
