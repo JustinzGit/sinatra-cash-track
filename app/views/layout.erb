@@ -6,6 +6,14 @@
     <link rel="stylesheet" href="/stylesheets/main.css">
   </head>
   <body>
+    <div class="navbar">
+      <% if logged_in? %>
+        <a href="/bills/show">Bills</a>
+        <a href="/banks/show">Banks</a>
+        <a href="/creditcards/show">Creditcards</a>
+        <a href="/logout">Logout</a>
+      <% end %>
+    </div>
     <div class="flash">
       <% if flash[:warning] %>
         <h2 style="color: red"><%= flash[:warning] %></h2>
