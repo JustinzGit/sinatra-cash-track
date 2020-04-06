@@ -5,7 +5,8 @@
 
 <h1>Current Bills</h1>
 <% @user.bills.each do |bill| %>
-  <p>Provider: <% bill.provider %></p>
-  <p>Balance: <% bill.balance %></p>
-  <p>Due: <% bill.duedate %></p>
+  <p>Provider: <%= bill.provider %></p>
+  <p>Balance: <%= bill.balance %></p>
+  <p>Due: <%= bill.duedate %></p>
+  <p>------------------------</p>
 <% end %>
