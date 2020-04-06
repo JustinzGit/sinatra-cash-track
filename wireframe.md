@@ -8,7 +8,7 @@
 - A user can add a bank to their account
 - A user should be able to associate their cards to a bank
 
-# MVC
+# MVP
 - //To-Do
 
 # Stretch Features
@@ -32,7 +32,7 @@
 ## Bill - Model
 ### attributes
 - provider
-- amount due
+- amount due (balance)
 - due date
 - paid?
 - user_id
@@ -74,7 +74,7 @@
 - belongs to user
 - belongs to bank
 
-## User Banks - Join Table 
+## User Bank - Join Table
 - user id
 - bank id
 
