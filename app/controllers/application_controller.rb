@@ -6,5 +6,9 @@ class ApplicationController < Sinatra::Base
     set :views, "app/views"
     set :public_folder, "public"
     register Sinatra::Flash
+  end
+
+  get '/' do
+    "HELLO WORLD"
   end 
 end
