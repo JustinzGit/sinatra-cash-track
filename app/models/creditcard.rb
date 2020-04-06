@@ -1,4 +1,4 @@
 class Creditcard < ActiveRecord::Base
   belongs_to :user
-  belongs_to :user
-end 
+  belongs_to :bank
+end
