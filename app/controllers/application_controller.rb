@@ -1,5 +1,4 @@
 class ApplicationController < Sinatra::Base
-
   configure do
     enable :sessions
     set :session_secret, "string to be hexed"
@@ -7,8 +6,4 @@ class ApplicationController < Sinatra::Base
     set :public_folder, "public"
     register Sinatra::Flash
   end
-
-  get '/' do
-    "HELLO WORLD"
-  end 
 end
