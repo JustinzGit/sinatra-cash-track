@@ -1,6 +1,6 @@
 class CreateDebitcards < ActiveRecord::Migration[6.0]
   def change
-    create_table :banks do |t|
+    create_table :debitcards do |t|
       t.string :balance
       t.integer :user_id
       t.integer :bank_id
