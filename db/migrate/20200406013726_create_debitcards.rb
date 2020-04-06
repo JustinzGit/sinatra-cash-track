@@ -1,4 +1,4 @@
-class CreateDebitcards < ActiveRecord::Migration[6.0]
+class CreateDebitcards < ActiveRecord::Migration[5.2]
   def change
     create_table :debitcards do |t|
       t.string :balance

@@ -1,4 +1,4 @@
-class CreateBills < ActiveRecord::Migration[6.0]
+class CreateBills < ActiveRecord::Migration[5.2]
   def change
     create_table :bills do |t|
       t.string :provider
@@ -7,6 +7,6 @@ class CreateBills < ActiveRecord::Migration[6.0]
       t.boolean :paid?
       t.integer :user_id
       t.timestamps null: false
-    end 
+    end
   end
 end

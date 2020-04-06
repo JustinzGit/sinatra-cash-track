@@ -1,4 +1,4 @@
-class CreateUserBanks < ActiveRecord::Migration[6.0]
+class CreateUserBanks < ActiveRecord::Migration[5.2]
   def change
     create_table :user_banks do |t|
       t.integer :user_id

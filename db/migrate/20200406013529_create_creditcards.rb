@@ -1,4 +1,4 @@
-class CreateCreditcards < ActiveRecord::Migration[6.0]
+class CreateCreditcards < ActiveRecord::Migration[5.2]
   def change
     create_table :creditcards do |t|
       t.float :balance
