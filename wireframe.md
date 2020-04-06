@@ -4,9 +4,9 @@
 # User Stories
 - A user should be able to sign up and log in
 - A user can add and track their bills
-- A user can add and track their debit / credit card information
+- A user can add and track their credit card information
 - A user can add a bank to their account
-- A user should be able to associate their cards to a bank
+- A user can associate their credit card to a bank
 
 # MVP
 - //To-Do
@@ -24,7 +24,6 @@
 
 ### associations
 - has many bills
-- has many debit cards
 - has many credit cards
 - has many user_banks
 - has many banks through user_banks
@@ -32,7 +31,7 @@
 ## Bill - Model
 ### attributes
 - provider
-- amount due (balance)
+- balance
 - due date
 - paid?
 - user_id
@@ -44,29 +43,21 @@
 ### attributes
 - name
 - url
+- checking_balance
+- saving_balance
 
 ### associations
-- has many debit cards
 - has many credit cards
 - has many user banks
 - has many users through user banks
 
 ## Credit Card - Model
 ### attributes
+- name
 - available balance
 - available credit
-- amount due date
+- due date
 - intrest rate
-- user_id
-- bank_id
-
-### associations
-- belongs to user
-- belongs to bank
-
-## Debit Card - Model
-### attributes
-- available balance
 - user_id
 - bank_id
 
