@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_06_025900) do
+ActiveRecord::Schema.define(version: 2020_04_06_035646) do
 
   create_table "banks", force: :cascade do |t|
     t.string "name"
     t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "checking_balance"
+    t.float "savings_balance"
   end
 
   create_table "bills", force: :cascade do |t|
@@ -34,15 +36,6 @@ ActiveRecord::Schema.define(version: 2020_04_06_025900) do
     t.float "credit"
     t.string "duedate"
     t.string "intrest_rate"
-    t.integer "user_id"
-    t.integer "bank_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "name"
-  end
-
-  create_table "debitcards", force: :cascade do |t|
-    t.string "balance"
     t.integer "user_id"
     t.integer "bank_id"
     t.datetime "created_at", null: false
