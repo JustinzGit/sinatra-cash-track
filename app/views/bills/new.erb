@@ -1,0 +1,8 @@
+<h1>Add a Bill to Track</h1>
+<form action="/bills" method="post">
+  <p>Provider: <input type="text" name="bill[provider]"></p>
+  <p>Balance: <input type="text" name="bill[balance]"></p>
+  <p>Due Date: <input type="text" name="bill[duedate]"></p>
+  <input name="bill[paid?]" value="false">
+  <input type="submit" value="Add Bill">
+</form>
