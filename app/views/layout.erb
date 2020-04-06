@@ -8,6 +8,7 @@
   <body>
     <div class="navbar">
       <% if logged_in? %>
+        <a href="/users/<%= current_user.slug %>">Home</a>
         <a href="/bills">Bills</a>
         <a href="/banks">Banks</a>
         <a href="/creditcards">Creditcards</a>
