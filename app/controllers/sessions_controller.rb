@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
     # Checks if email has alredy been taken
     if User.find_by(email: params[:user][:email])
       flash[:warning] = "That email has already been taken"
+      redirect '/signup'
 
     # Checks that all attributes have been filled, create user account and log user in
     elsif params[:user][:username] != "" && params[:user][:email] != "" && params[:user][:password] != ""
@@ -26,7 +27,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect :'users/index'
+      redirect "/users/#{user.slug}"
     else
       flash[:warning] = "Something went wrong. Check credentials and try again."
       redirect '/login'
