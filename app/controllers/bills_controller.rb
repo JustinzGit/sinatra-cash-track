@@ -8,11 +8,11 @@ class BillsController < ApplicationController
   end
 
   post '/bills' do
-    Bill.create(params[:bill])
+    current_user.bills << Bill.create(params[:bill])
     redirect '/bills'
   end
 
   get '/bills/:id/edit' do
     erb :'/bills/edit'
-  end 
+  end
 end
