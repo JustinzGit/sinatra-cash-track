@@ -2,4 +2,10 @@
 <h2>To-Do</h2>
 <p>Banking Information</p>
 <p>Credit Card Information</p>
-<p>Bill Information</p>
+
+<h1>Current Bills</h1>
+<% @user.bills.each do |bill| %>
+  <p>Provider: <% bill.provider %></p>
+  <p>Balance: <% bill.balance %></p>
+  <p>Due: <% bill.duedate %></p>
+<% end %>
