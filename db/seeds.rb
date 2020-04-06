@@ -11,9 +11,9 @@ platinum_credit_card = Creditcard.create(name: "Platinum", balance: 100.0, credi
 chase_bank = Bank.create(name: "Chase Bank", url: "chase.com")
 capitalone_bank = Bank.create(name: "Capital One", url: "chase.com")
 
+# Code below used to test associations
 # User can have many bills
 justin.bills << hulu
-justin.bills << netflix
 justin.bills << att
 david.bills << netflix
 
@@ -24,6 +24,7 @@ justin.banks << capitalone_bank
 # User can have many credit cards
 justin.creditcards << sapphire_credit_card
 
-# User can associate a card to a bank
-# justin_chase_bank = justin.banks.where(name: "Chase Bank")
-# justin_chase_bank.creditcards << justin.creditcards.where(name: "Chase Sapphire")
+# User can associate a credit card to a bank
+justins_sapphire = Creditcard.find_by(name: "Chase Sapphire", user_id: justin.id)
+chase_Bank = Bank.find_by(name: "Chase Bank")
+chase_Bank.creditcards << justins_sapphire
