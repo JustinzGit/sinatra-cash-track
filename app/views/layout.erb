@@ -9,6 +9,8 @@
     <div class="flash">
       <% if flash[:warning] %>
         <h2 style="color: red"><%= flash[:warning] %></h2>
+      <% elsif flash[:notice] %>
+        <h2 style="color: green"><%= flash[:notice] %></h2>
       <% end %>
     </div>
     <%= yield %>
