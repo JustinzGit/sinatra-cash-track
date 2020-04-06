@@ -10,5 +10,9 @@ class User < ActiveRecord::Base
 
   def slug
     username.downcase + "-" + id.to_s
-  end 
+  end
+
+  def self.find_user_by_slug(slug)
+    all.find{|u| u.slug == slug}
+  end  
 end
