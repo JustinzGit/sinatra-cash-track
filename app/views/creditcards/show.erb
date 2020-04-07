@@ -1,16 +1,38 @@
-<h1>Users Creditcards</h1>
-<a href="/creditcards/new">Add Creditcard</a>
-<p>-------------------------------------------</p>
-<% current_user.creditcards.each do |creditcard| %>
-  <p>Card Name: <%= creditcard.name %></p>
-  <p>Intrest Rate: <%= creditcard.intrest_rate %></p>
-  <p>Balance: <%= creditcard.balance %></p>
-  <p>Credit: <%= creditcard.credit %></p>
-  <p>Minium payment due: <%= creditcard.duedate %></p>
-  <a href="/creditcards/<%= creditcard.id %>/edit">Edit Card</a>
-  <form action="/creditcards/<%= creditcard.id %>" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <p><input type="submit" value="Delete Card"></p>
-  </form>
-  <p>-------------------------------------------</p>
-<% end %>
+<style>
+.table {
+  width: 80%;
+  margin: auto;
+}
+</style>
+
+<h2 style="text-align: center"><%= current_user.username %>'s Credit Cards</h2>
+  <p style="text-align: center"><a href="/creditcareds/new">Add New Card</a></p>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Balance</th>
+        <th scope="col">Intrest Rate</th>
+        <th scope="col">Credit</th>
+        <th scope="col">Minimum Payment Due</th>
+        <th scope="col">Edit Card</th>
+        <th scope="col">Delete Card</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% current_user.creditcards.each do |creditcard| %>
+      <tr>
+        <td><%= creditcard.name %></td>
+        <td><%= creditcard.balance %></td>
+        <td><%= creditcard.intrest_rate %></td>
+        <td><%= creditcard.credit %></td>
+        <td><%= creditcard.duedate %></td>
+        <td><a href="/creditcards/<%= creditcard.id %>/edit">Edit Card</a></td>
+        <td><form action="/creditcards/<%= creditcard.id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="Delete Card">
+        </form></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
