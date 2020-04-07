@@ -1,15 +1,34 @@
-<h1>Users Banks</h1>
-<a href="/banks/new">Add Bank</a>
-<p>-------------------------------------------</p>
-<% current_user.banks.each do |bank| %>
-  <p>Bank: <%= bank.name %></p>
-  <p>Checking: <%= bank.checking_balance %></p>
-  <p>Savings: <%= bank.savings_balance %></p>
-  <a href="<%= bank.url %>">Bank Site</a>
-  <a href="/banks/<%= bank.id %>/edit">Edit Bank</a>
-  <form action="/banks/<%= bank.id %>" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <p><input type="submit" value="Delete Bank"></p>
-  </form>
-  <p>-------------------------------------------</p>
-<% end %>
+<style>
+.table {
+  width: 80%;
+  margin: auto;
+}
+</style>
+
+<h2 style="text-align: center"><%= current_user.username %>'s Banks</h2>
+  <p style="text-align: center"><a href="/banks/new">Add New Bank</a></p>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Bank</th>
+        <th scope="col">Checking</th>
+        <th scope="col">Savings</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% current_user.banks.each do |bank| %>
+      <tr>
+        <td><a href="<%= bank.url %>"><%= bank.name %></a></td>
+        <td><%= bank.checking_balance %></td>
+        <td><%= bank.savings_balance %></td>
+        <td><a href="/banks/<%= bank.id %>/edit">Edit Bank</a></td>
+        <td><form action="/banks/<%= bank.id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="Delete Bank">
+        </form></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
