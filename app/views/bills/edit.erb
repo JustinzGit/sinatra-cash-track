@@ -1,0 +1,8 @@
+<h1>Edit Bill</h1>
+<form action="/bills/<%= @bill.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <p>Provider: <input type="text" name="bill[provider]" value="<%= @bill.provider %>"></p>
+  <p>Balance: <input type="text" name="bill[balance]" value="<%= @bill.balance %>"></p>
+  <p>Due Date: <input type="text" name="bill[duedate]" value="<%= @bill.duedate %>"></p>
+  <input type="submit" value="Edit Bill">
+</form>
