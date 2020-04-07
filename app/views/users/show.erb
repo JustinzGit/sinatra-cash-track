@@ -126,14 +126,25 @@ color: white !important
 </div>
 
 <div class="column">
-  <h1>Users Banks</h1>
-  <% @user.banks.each do |bank| %>
-    <p>Bank: <%= bank.name %></p>
-    <p>Checking: <%= bank.checking_balance %></p>
-    <p>Savings: <%= bank.savings_balance %></p>
-    <a href="<%= bank.url %>">Bank Website</a>
-    <p>------------------------</p>
-  <% end %>
+  <h1 style="text-align: center">Banking</h1>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Bank</th>
+        <th scope="col">Checking</th>
+        <th scope="col">Savings</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user.banks.each do |bank| %>
+      <tr>
+        <td><a href="<%= bank.url %>"><%= bank.name %></a></td>
+        <td><%= bank.checking_balance %></td>
+        <td><%= bank.savings_balance %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 
   <h1>Users Creditcards</h1>
   <% @user.creditcards.each do |creditcard| %>
