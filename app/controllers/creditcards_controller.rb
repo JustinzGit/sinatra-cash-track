@@ -7,6 +7,11 @@ class CreditcardsController < ApplicationController
     erb :'/creditcards/new'
   end
 
+  get '/creditcards/:id/edit' do
+    @creditcard = Creditcard.find(params[:id])
+    erb :'/bills/edit'
+  end
+
   post '/creditcards' do
     current_user.creditcards << Creditcard.create(params[:creditcard])
     redirect '/creditcards'
@@ -22,5 +27,5 @@ class CreditcardsController < ApplicationController
     creditcard = Creditcard.find(params[:id])
     creditcard.destroy
     redirect '/creditcards'
-  end 
+  end
 end

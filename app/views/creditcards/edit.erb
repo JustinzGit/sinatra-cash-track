@@ -1,5 +1,5 @@
 <h1>Edit creditcard</h1>
-<form action="/creditcards/<%= @creditcard.id %>" method="post">
+<form action="/creditcards/<%= @creditcard.id %>/edit" method="post">
   <input type="hidden" name="_method" value="patch">
   <p>Card Name: <input type="text" name="creditcard[name]" value="<%= @creditcard.name %>"></p>
   <p>Intrest Rate: <input type="text" name="creditcard[intrest_rate]" value="<%= @creditcard.intrest_rate %>"></p>
