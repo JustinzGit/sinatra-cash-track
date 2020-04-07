@@ -1,0 +1,8 @@
+<h1>Edit Bank</h1>
+<form action="/banks/<%= @bank.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <p>Bank: <input type="text" name="bank[name]" value="<%= @bank.name %>"></p>
+  <p>Checking: <input type="text" name="bank[checking_balance]" value="<%= @bank.checking_balance %>"></p>
+  <p>Savings: <input type="text" name="bank[savings_balance]" value="<%= @bank.savings_balance %>"></p>
+  <input type="submit" value="Edit Bank">
+</form>
