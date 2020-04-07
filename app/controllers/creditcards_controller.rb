@@ -5,5 +5,10 @@ class CreditcardsController < ApplicationController
 
   get '/creditcards/new' do
     erb :'/creditcards/new'
+  end
+
+  post '/creditcards' do
+    current_user.creditcards << Creditcard.create(params[:creditcard])
+    redirect '/creditcards'
   end 
 end
