@@ -7,7 +7,7 @@
 /* Create three equal columns that floats next to each other */
 .column {
   float: left;
-  width: 43%;
+  width: 50%;
   min-width: 400px;
   padding: 15px;
   /* background-color: #C0C0C0; */
@@ -98,34 +98,7 @@ color: white !important
       <% end %>
     </tbody>
   </table>
-</div>
 
-
-<div class="column">
-  <div class="month">
-    <ul>
-      <li>August<br><span style="font-size:18px">2017</span></li>
-    </ul>
-  </div>
-
-  <ul class="weekdays">
-    <li>Mo</li>
-    <li>Tu</li>
-    <li>We</li>
-    <li>Th</li>
-    <li>Fr</li>
-    <li>Sa</li>
-    <li>Su</li>
-  </ul>
-
-  <ul class="days">
-  <% Calendar.days_in_month(1).times.with_index do |i| %>
-  <li><%= "#{i + 1}" %></li>
-  <% end %>
-  </ul>
-</div>
-
-<div class="column">
   <h2 style="text-align: center">Banking</h2>
   <table class="table">
     <thead class="thead-light">
@@ -167,4 +140,29 @@ color: white !important
       <% end %>
     </tbody>
   </table>
+</div>
+
+
+<div class="column">
+  <div class="month">
+    <ul>
+      <li>August<br><span style="font-size:18px">2017</span></li>
+    </ul>
+  </div>
+
+  <ul class="weekdays">
+    <li>Mo</li>
+    <li>Tu</li>
+    <li>We</li>
+    <li>Th</li>
+    <li>Fr</li>
+    <li>Sa</li>
+    <li>Su</li>
+  </ul>
+
+  <ul class="days">
+  <% Calendar.days_in_month(1).times.with_index do |i| %>
+  <li><%= "#{i + 1}" %></li>
+  <% end %>
+  </ul>
 </div>
