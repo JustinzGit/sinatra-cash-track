@@ -8,4 +8,20 @@ class Calendar
       return 28
     end
   end
+
+  def self.todays_date?(day)
+    if day == Date.today.strftime("%e").strip.to_i
+      return true
+    end
+    false
+  end
+
+  def self.bill_day?(day)
+    Bill.all.each do |bill|
+      if Date._parse(bill.duedate)[:mon] == day
+        return "#FF0000"
+      end
+    end
+    false
+  end
 end
