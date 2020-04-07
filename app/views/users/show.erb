@@ -1,6 +1,5 @@
 <h1><%= @user.username %>'s Homepage</h1>
 <h2>To-Do</h2>
-<p>Banking Information</p>
 <p>Credit Card Information</p>
 
 <h1>Users Bills</h1>
@@ -12,10 +11,21 @@
 <% end %>
 
 <h1>Users Banks</h1>
-<%= @user.banks.each do |bank| %>
+<% @user.banks.each do |bank| %>
   <p>Bank: <%= bank.name %></p>
   <p>Checking: <%= bank.checking_balance %></p>
   <p>Savings: <%= bank.savings_balance %></p>
   <a href="<%= bank.url %>">Bank Website</a>
+  <p>------------------------</p>
+<% end %>
+
+<h1>Users Creditcards</h1>
+<% @user.creditcards.each do |creditcard| %>
+  <!-- <p>Bank Provider: <%= creditcard.bank_id %></p> -->
+  <p>Card Name: <%= creditcard.name %></p>
+  <p>Intrest Rate: <%= creditcard.intrest_rate %></p>
+  <p>Balance: <%= creditcard.balance %></p>
+  <p>Credit: <%= creditcard.credit %></p>
+  <p>Minium payment due: <%= creditcard.duedate %></p>
   <p>------------------------</p>
 <% end %>
