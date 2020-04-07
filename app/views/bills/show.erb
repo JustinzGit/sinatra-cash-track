@@ -1,14 +1,34 @@
-<h1>Current Bills</h1>
-<a href="/bills/new">Add Bill</a>
-<p>-------------------------------------------</p>
-<% current_user.bills.each do |bill| %>
-  <p>Provider: <%= bill.provider %></p>
-  <p>Balance: <%= bill.balance %></p>
-  <p>Due: <%= bill.duedate %></p>
-  <a href="/bills/<%= bill.id %>/edit">Edit Bill</a>
-  <form action="/bills/<%= bill.id %>" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <p><input type="submit" value="Delete Bill"></p>
-  </form>
-  <p>-------------------------------------------</p>
-<% end %>
+<style>
+.table {
+  width: 80%;
+  margin: auto;
+}
+</style>
+
+<h2 style="text-align: center"><%= current_user.username %>'s Bills</h2>
+  <p style="text-align: center"><a href="/bills/new">Add New Bill</a></p>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Provider</th>
+        <th scope="col">Balance</th>
+        <th scope="col">Due On</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% current_user.bills.each do |bill| %>
+      <tr>
+        <td><%= bill.provider %></td>
+        <td><%= bill.balance %></td>
+        <td><%= bill.duedate %></td>
+        <td><a href="/bills/<%= bill.id %>/edit">Edit Bill</a></td>
+        <td><form action="/bills/<%= bill.id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="Delete Bill">
+        </form></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
