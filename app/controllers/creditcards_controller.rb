@@ -16,5 +16,11 @@ class CreditcardsController < ApplicationController
     creditcard = Creditcard.find(params[:id])
     creditcard.update(params[:creditcard])
     redirect '/creditcards'
+  end
+
+  delete '/creditcards/:id' do
+    creditcard = Creditcard.find(params[:id])
+    creditcard.destroy
+    redirect '/creditcards'
   end 
 end
