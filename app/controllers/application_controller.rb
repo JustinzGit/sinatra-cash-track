@@ -15,6 +15,10 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+  get '/calendar' do
+    erb :calendar
+  end
+  
   helpers do
     def current_user
       User.find_by(id: session[:user_id])
