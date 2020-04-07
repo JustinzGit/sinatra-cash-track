@@ -10,7 +10,7 @@
   width: 33%;
   min-width: 300px;
   padding: 15px;
-  background-color: #C0C0C0;
+  /* background-color: #C0C0C0; */
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
@@ -79,14 +79,27 @@ color: white !important
 <h1><%= @user.username %>'s Homepage</h1>
 
 <div class="column">
-  <h1>Users Bills</h1>
-  <% @user.bills.each do |bill| %>
-    <p>Provider: <%= bill.provider %></p>
-    <p>Balance: <%= bill.balance %></p>
-    <p>Due: <%= bill.duedate %></p>
-    <p>------------------------</p>
-  <% end %>
+  <h2 style="text-align: center;">Bills</h2>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Provider</th>
+        <th scope="col">Balance</th>
+        <th scope="col">Due On</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user.bills.each do |bill| %>
+      <tr>
+        <td><%= bill.provider %></td>
+        <td><%= bill.balance %></td>
+        <td><%= bill.duedate %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
+
 
 <div class="column">
   <div class="month">
