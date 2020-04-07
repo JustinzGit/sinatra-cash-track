@@ -9,7 +9,7 @@ class CreditcardsController < ApplicationController
 
   get '/creditcards/:id/edit' do
     @creditcard = Creditcard.find(params[:id])
-    erb :'/bills/edit'
+    erb :'/creditcards/edit'
   end
 
   post '/creditcards' do
