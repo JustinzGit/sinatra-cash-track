@@ -13,12 +13,19 @@ class BillsController < ApplicationController
   end
 
   get '/bills/:id/edit' do
+    @bill = Bill.find(params[:id])
     erb :'/bills/edit'
+  end
+
+  patch '/bills/:id' do
+    bill = Bill.find(params[:id])
+    bill.update(params[:bill])
+    redirect '/bills'
   end
 
   delete '/bills/:id' do
     bill = Bill.find(params[:id])
     bill.destroy
     redirect '/bills'
-  end 
+  end
 end
