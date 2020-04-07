@@ -15,4 +15,10 @@ class BillsController < ApplicationController
   get '/bills/:id/edit' do
     erb :'/bills/edit'
   end
+
+  delete '/bills/:id' do
+    bill = Bill.find(params[:id])
+    bill.destroy
+    redirect '/bills'
+  end 
 end
