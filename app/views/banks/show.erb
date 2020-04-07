@@ -1,0 +1,15 @@
+<h1>Users Banks</h1>
+<a href="/banks/new">Add Bank</a>
+<p>-------------------------------------------</p>
+<% current_user.banks.each do |bank| %>
+  <p>Bank: <%= bank.name %></p>
+  <p>Checking: <%= bank.checking_balance %></p>
+  <p>Savings: <%= bank.savings_balance %></p>
+  <a href="<%= bank.url %>">Bank Site</a>
+  <a href="/banks/<%= bank.id %>/edit">Edit Bank</a>
+  <form action="/banks/<%= bank.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <p><input type="submit" value="Delete Bank"></p>
+  </form>
+  <p>-------------------------------------------</p>
+<% end %>
