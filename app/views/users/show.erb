@@ -7,8 +7,8 @@
 /* Create three equal columns that floats next to each other */
 .column {
   float: left;
-  width: 33%;
-  min-width: 300px;
+  width: 43%;
+  min-width: 400px;
   padding: 15px;
   /* background-color: #C0C0C0; */
 }
@@ -76,7 +76,7 @@ color: white !important
 </style>
 
 
-<h1><%= @user.username %>'s Homepage</h1>
+<h1 style="text-align: center;"><%= @user.username %>'s Dashboard</h1>
 
 <div class="column">
   <h2 style="text-align: center;">Bills</h2>
@@ -126,7 +126,7 @@ color: white !important
 </div>
 
 <div class="column">
-  <h1 style="text-align: center">Banking</h1>
+  <h2 style="text-align: center">Banking</h2>
   <table class="table">
     <thead class="thead-light">
       <tr>
@@ -146,14 +146,25 @@ color: white !important
     </tbody>
   </table>
 
-  <h1>Users Creditcards</h1>
-  <% @user.creditcards.each do |creditcard| %>
-    <!-- <p>Bank Provider: <%= creditcard.bank_id %></p> -->
-    <p>Card Name: <%= creditcard.name %></p>
-    <p>Intrest Rate: <%= creditcard.intrest_rate %></p>
-    <p>Balance: <%= creditcard.balance %></p>
-    <p>Credit: <%= creditcard.credit %></p>
-    <p>Minium payment due: <%= creditcard.duedate %></p>
-    <p>------------------------</p>
-  <% end %>
+  <h2 style="text-align: center">Credit Cards</h2>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Card</th>
+        <th scope="col">Balance</th>
+        <th scope="col">Credit</th>
+        <th scope="col">Payment Due</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user.creditcards.each do |creditcard| %>
+      <tr>
+        <td><%= creditcard.name %></td>
+        <td><%= creditcard.balance %></td>
+        <td><%= creditcard.credit %></td>
+        <td><%= creditcard.duedate %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
