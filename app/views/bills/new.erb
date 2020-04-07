@@ -1,7 +1,27 @@
+<style>
+.form-control {
+    width: 200px;
+  }
+</style>
+
 <h1>Add a Bill to Track</h1>
-<form action="/bills" method="post">
-  <p>Provider: <input type="text" name="bill[provider]"></p>
-  <p>Balance: <input type="text" name="bill[balance]"></p>
-  <p>Due Date: <input type="text" name="bill[duedate]"></p>
-  <input type="submit" value="Add Bill">
-</form>
+<div class="form-group">
+  <form action="/bills" method="post">
+    <p>Provider: <input type="text" class="form-control" name="bill[provider]"></p>
+    <p>Balance: <input type="text" class="form-control" name="bill[balance]"></p>
+    <p>Due Date: <input type="text" class="form-control" name="bill[duedate]"></p>
+    <p>Color:
+      <select id="inputState" class="form-control" name="bill[color]">
+      <option selected disabled value>Choose Color</option>
+      <option>No Color</option>
+      <option value="#FF9933">Orange</option>
+      <option value="#993399">Purple</option>
+      <option value="#FFFF00">Yellow</option>
+      <option value="#00CC00">Green</option>
+      <option value="#0000FF">Blue</option>
+      <option value="#FF66FF">Pink</option>
+      <option value="#FF0000">Red</option>
+      </select></p>
+    <input type="submit" value="Add Bill">
+  </form>
+</div>
