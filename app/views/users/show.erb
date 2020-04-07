@@ -13,12 +13,7 @@
   /* background-color: #C0C0C0; */
 }
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width:600px) {
-  .column {
-    width: 100%;
-  }
-}
+
 
 .month {
   width: 100%;
@@ -146,7 +141,7 @@ color: white !important
 <div class="column">
   <div class="month">
     <ul>
-      <li>August<br><span style="font-size:18px">2017</span></li>
+      <li><%= Date.today.strftime("%B") %><br><span style="font-size:18px"><%= Date.today.strftime("%Y") %></span></li>
     </ul>
   </div>
 
@@ -162,7 +157,11 @@ color: white !important
 
   <ul class="days">
   <% Calendar.days_in_month(1).times.with_index do |i| %>
-  <li><%= "#{i + 1}" %></li>
+    <% if Calendar.todays_date?(i + 1) || Calendar.bill_day?(i + 1)   %>
+      <li><span class="active" style="background: <%= Calendar.bill_day?(i + 1) %>"><%= i + 1 %></span></li>
+    <% else %>
+      <li><%= i + 1 %></li>
+    <% end %>
   <% end %>
   </ul>
 </div>
