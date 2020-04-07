@@ -3,10 +3,19 @@
 <p>Banking Information</p>
 <p>Credit Card Information</p>
 
-<h1>Current Bills</h1>
+<h1>Users Bills</h1>
 <% @user.bills.each do |bill| %>
   <p>Provider: <%= bill.provider %></p>
   <p>Balance: <%= bill.balance %></p>
   <p>Due: <%= bill.duedate %></p>
+  <p>------------------------</p>
+<% end %>
+
+<h1>Users Banks</h1>
+<%= @user.banks.each do |bank| %>
+  <p>Bank: <%= bank.name %></p>
+  <p>Checking: <%= bank.checking_balance %></p>
+  <p>Savings: <%= bank.savings_balance %></p>
+  <a href="<%= bank.url %>">Bank Website</a>
   <p>------------------------</p>
 <% end %>
