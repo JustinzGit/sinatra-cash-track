@@ -19,7 +19,7 @@ class Calendar
   def self.bill_day?(day)
     Bill.all.each do |bill|
       if Date._parse(bill.duedate)[:mon] == day
-        return "#FF0000"
+        return bill.color
       end
     end
     false
