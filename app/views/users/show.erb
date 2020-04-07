@@ -1,31 +1,133 @@
+<style media="screen">
+* {
+  /* browser accounts for border/padding when elements width / height is specified */
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 15px;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+.month {
+  width: 100%;
+  background: #00b3e6;
+  text-align: center;
+}
+
+.month ul {
+margin: 0;
+padding: 0;
+}
+
+.month ul li {
+color: white;
+font-size: 30px;
+text-transform: uppercase;
+letter-spacing: 3px;
+}
+
+.weekdays {
+margin: 0;
+padding: 10px 0;
+background-color: #ddd;
+}
+
+.weekdays li {
+display: inline-block;
+width: 13.6%;
+color: #666;
+text-align: center;
+font-size: 20px;
+}
+
+.days {
+padding: 10px 0;
+background: #eee;
+margin: 0;
+}
+
+.days li {
+list-style-type: none;
+display: inline-block;
+width: 13.6%;
+text-align: center;
+margin-bottom: 5px;
+font-size: 20px;
+color: #777;
+}
+
+.days li .active {
+padding: 5px;
+background: #1abc9c;
+color: white !important
+}
+</style>
+
+
 <h1><%= @user.username %>'s Homepage</h1>
-<h2>To-Do</h2>
-<p>Credit Card Information</p>
 
-<h1>Users Bills</h1>
-<% @user.bills.each do |bill| %>
-  <p>Provider: <%= bill.provider %></p>
-  <p>Balance: <%= bill.balance %></p>
-  <p>Due: <%= bill.duedate %></p>
-  <p>------------------------</p>
-<% end %>
+<div class="column">
+  <h1>Users Bills</h1>
+  <% @user.bills.each do |bill| %>
+    <p>Provider: <%= bill.provider %></p>
+    <p>Balance: <%= bill.balance %></p>
+    <p>Due: <%= bill.duedate %></p>
+    <p>------------------------</p>
+  <% end %>
+</div>
 
-<h1>Users Banks</h1>
-<% @user.banks.each do |bank| %>
-  <p>Bank: <%= bank.name %></p>
-  <p>Checking: <%= bank.checking_balance %></p>
-  <p>Savings: <%= bank.savings_balance %></p>
-  <a href="<%= bank.url %>">Bank Website</a>
-  <p>------------------------</p>
-<% end %>
+<div class="column">
+  <div class="month">
+    <ul>
+      <li>August<br><span style="font-size:18px">2017</span></li>
+    </ul>
+  </div>
 
-<h1>Users Creditcards</h1>
-<% @user.creditcards.each do |creditcard| %>
-  <!-- <p>Bank Provider: <%= creditcard.bank_id %></p> -->
-  <p>Card Name: <%= creditcard.name %></p>
-  <p>Intrest Rate: <%= creditcard.intrest_rate %></p>
-  <p>Balance: <%= creditcard.balance %></p>
-  <p>Credit: <%= creditcard.credit %></p>
-  <p>Minium payment due: <%= creditcard.duedate %></p>
-  <p>------------------------</p>
-<% end %>
+  <ul class="weekdays">
+    <li>Mo</li>
+    <li>Tu</li>
+    <li>We</li>
+    <li>Th</li>
+    <li>Fr</li>
+    <li>Sa</li>
+    <li>Su</li>
+  </ul>
+
+  <ul class="days">
+  <% Calendar.days_in_month(1).times.with_index do |i| %>
+  <li><%= "#{i + 1}" %></li>
+  <% end %>
+  </ul>
+</div>
+
+<div class="column">
+  <h1>Users Banks</h1>
+  <% @user.banks.each do |bank| %>
+    <p>Bank: <%= bank.name %></p>
+    <p>Checking: <%= bank.checking_balance %></p>
+    <p>Savings: <%= bank.savings_balance %></p>
+    <a href="<%= bank.url %>">Bank Website</a>
+    <p>------------------------</p>
+  <% end %>
+
+  <h1>Users Creditcards</h1>
+  <% @user.creditcards.each do |creditcard| %>
+    <!-- <p>Bank Provider: <%= creditcard.bank_id %></p> -->
+    <p>Card Name: <%= creditcard.name %></p>
+    <p>Intrest Rate: <%= creditcard.intrest_rate %></p>
+    <p>Balance: <%= creditcard.balance %></p>
+    <p>Credit: <%= creditcard.credit %></p>
+    <p>Minium payment due: <%= creditcard.duedate %></p>
+    <p>------------------------</p>
+  <% end %>
+</div>
