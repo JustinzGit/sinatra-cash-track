@@ -22,6 +22,10 @@ body {
   margin-top: 10px;
 }
 
+.nav-item {
+  padding-right: 25px;
+}
+
 h3 {
   text-align: center;
   font: Segoe UI;
