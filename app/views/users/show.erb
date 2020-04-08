@@ -1,83 +1,8 @@
-<style media="screen">
-* {
-  /* browser accounts for border/padding when elements width / height is specified */
-  box-sizing: border-box;
-}
-
-/* Create three equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 50%;
-  min-width: 400px;
-  padding: 15px;
-  /* background-color: #C0C0C0; */
-}
-
-
-
-.month {
-  width: 100%;
-  background: #00b3e6;
-  text-align: center;
-}
-
-.month ul {
-margin: 0;
-padding: 0;
-}
-
-.month ul li {
-color: white;
-font-size: 30px;
-text-transform: uppercase;
-letter-spacing: 3px;
-}
-
-.weekdays {
-margin: 0;
-padding: 10px 0;
-background-color: #ddd;
-}
-
-.weekdays li {
-display: inline-block;
-width: 13.6%;
-color: #666;
-text-align: center;
-font-size: 20px;
-}
-
-.days {
-padding: 10px 0;
-background: #eee;
-margin: 0;
-}
-
-.days li {
-list-style-type: none;
-display: inline-block;
-width: 13.6%;
-text-align: center;
-margin-bottom: 5px;
-font-size: 20px;
-color: #777;
-}
-
-.days li .active {
-padding: 5px;
-background: #1abc9c;
-color: white !important
-}
-
-</style>
-
-
-<h1 style="text-align: center;"><%= @user.username %>'s Dashboard</h1>
-
+<h1>Welcome, <%= @user.username %></h1>
 <div class="column">
-  <h2 style="text-align: center;">Bills</h2>
+  <h3>Current Bills</h3>
   <table class="table">
-    <thead class="thead-light">
+    <thead class="thead-dark">
       <tr>
         <th scope="col">Provider</th>
         <th scope="col">Balance</th>
@@ -95,9 +20,9 @@ color: white !important
     </tbody>
   </table>
 
-  <h2 style="text-align: center">Banking</h2>
+  <h3>Bank Information</h3>
   <table class="table">
-    <thead class="thead-light">
+    <thead class="thead-dark">
       <tr>
         <th scope="col">Bank</th>
         <th scope="col">Checking</th>
@@ -115,9 +40,9 @@ color: white !important
     </tbody>
   </table>
 
-  <h2 style="text-align: center">Credit Cards</h2>
+  <h3>Credit Card Information</h3>
   <table class="table">
-    <thead class="thead-light">
+    <thead class="thead-dark">
       <tr>
         <th scope="col">Card</th>
         <th scope="col">Balance</th>

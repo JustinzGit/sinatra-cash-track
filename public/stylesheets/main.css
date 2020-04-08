@@ -1,3 +1,86 @@
+/* browser accounts for border/padding when elements width / height is specified */
+* {
+  box-sizing: border-box;
+}
+
+/* CSS for pages columns */
+.column {
+  float: left;
+  width: 50%;
+  min-width: 400px;
+  padding: 15px;
+}
+
 body {
   margin: 100px;
+}
+
+h1 {
+  text-align: center;
+  font: francois one;
+}
+
+h3 {
+  text-align: center;
+  font: Segoe UI;
+  background-color: #eee;
+}
+
+.table, th, td {
+  text-align: center;
+}
+
+/* CSS for Calendar */
+.month {
+  width: 100%;
+  background: #00b3e6;
+  text-align: center;
+}
+
+.month ul {
+margin: 0;
+padding: 0;
+}
+
+.month ul li {
+color: white;
+font-size: 30px;
+text-transform: uppercase;
+letter-spacing: 3px;
+}
+
+.weekdays {
+margin: 0;
+padding: 10px 0;
+background-color: #ddd;
+}
+
+.weekdays li {
+display: inline-block;
+width: 13.6%;
+color: #666;
+text-align: center;
+font-size: 20px;
+}
+
+.days {
+padding: 10px 0;
+background: #eee;
+margin: 0;
+}
+
+.days li {
+list-style-type: none;
+display: inline-block;
+width: 13.6%;
+text-align: center;
+margin-bottom: 5px;
+font-size: 20px;
+color: #777;
+}
+
+.days li .active {
+padding: 5px;
+background: #1abc9c;
+color: white !important
 }
