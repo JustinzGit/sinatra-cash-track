@@ -11,6 +11,7 @@
 - Change form to add new credit card
 - Ensure user enters Balance, interest rate, credit, and due date correctly
 
+- Fix day / month selector from Ruby Date method
 - Fix Tux, will load when nothing in config.ru
 - Use instance variable user or current_user method?
 - routes should be users/:id/bills and users/:id/banks?
