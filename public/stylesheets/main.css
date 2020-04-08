@@ -7,13 +7,26 @@
 .column {
   float: left;
   width: 50%;
-  min-width: 400px;
-  padding: 15px;
+  padding: 10px;
 }
 
-body {
-  margin: 100px;
+@media screen and (max-width: 1000px) {
+  .column {
+    width: 100%;
+  }
 }
+
+#calendar {
+  margin-right: 100%;
+  width: 550px;
+  margin-left: 50px;
+}
+
+
+
+/* body {
+  margin: 100px;
+} */
 
 #page-title {
   text-align: center;
@@ -26,14 +39,28 @@ body {
   padding-right: 25px;
 }
 
+.navbar {
+  min-width: 500px;
+}
+
+/* Table Headers */
 h3 {
   text-align: center;
   font: Segoe UI;
   background-color: #eee;
+  width: 550px;
+  margin-left: auto;
+  margin-right: 50px;
+}
+
+.table{
+  margin-left: auto;
+  margin-right: 50px;
 }
 
 .table, th, td {
   text-align: center;
+  width: 550px;
 }
 
 .new-link{

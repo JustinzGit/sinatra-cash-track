@@ -1,5 +1,6 @@
 <h1 id="page-title">Welcome, <%= @user.username %></h1>
-<div class="column">
+<div style="background-color: #88CFE4" class="column">
+<div id="user_info">
   <h3>Current Bills</h3>
   <table class="table">
     <thead class="thead-dark">
@@ -62,33 +63,35 @@
     </tbody>
   </table>
 </div>
-
-
-<div class="column">
-  <div class="month">
-    <ul>
-      <li><%= Date.today.strftime("%B") %></li>
-      <li><%= Date.today.strftime("%Y") %></li>
-    </ul>
-  </div>
-
-  <ul class="weekdays">
-    <li>Mo</li>
-    <li>Tu</li>
-    <li>We</li>
-    <li>Th</li>
-    <li>Fr</li>
-    <li>Sa</li>
-    <li>Su</li>
-  </ul>
-
-  <ul class="days">
-  <% Calendar.days_in_month(1).times.with_index do |i| %>
-    <% if Calendar.todays_date?(i + 1) || Calendar.bill_day?(i + 1) %>
-      <li><span class="active" style="background: <%= Calendar.bill_day?(i + 1) %>"><%= i + 1 %></span></li>
-    <% else %>
-      <li><%= i + 1 %></li>
-    <% end %>
-  <% end %>
-  </ul>
 </div>
+
+<div style="background-color: #BB7DA1" class="column">
+    <div id="calendar">
+      <div class="month">
+        <ul>
+          <li><%= Date.today.strftime("%B") %></li>
+          <li><%= Date.today.strftime("%Y") %></li>
+        </ul>
+      </div>
+
+      <ul class="weekdays">
+        <li>Mo</li>
+        <li>Tu</li>
+        <li>We</li>
+        <li>Th</li>
+        <li>Fr</li>
+        <li>Sa</li>
+        <li>Su</li>
+      </ul>
+
+      <ul class="days">
+      <% Calendar.days_in_month(1).times.with_index do |i| %>
+        <% if Calendar.todays_date?(i + 1) || Calendar.bill_day?(i + 1) %>
+          <li><span class="active" style="background: <%= Calendar.bill_day?(i + 1) %>"><%= i + 1 %></span></li>
+        <% else %>
+          <li><%= i + 1 %></li>
+        <% end %>
+      <% end %>
+      </ul>
+    </div>
+  </div>
