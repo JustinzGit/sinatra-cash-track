@@ -19,7 +19,7 @@ body {
   text-align: center;
   font: francois one;
   margin-bottom: 25px;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .nav-item {
@@ -53,6 +53,7 @@ color: white;
 font-size: 30px;
 text-transform: uppercase;
 letter-spacing: 3px;
+font: Segoe UI;
 }
 
 .weekdays {
