@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="/stylesheets/main.css">
   </head>
   <body>
+    <% if logged_in? %>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <% if logged_in? %>
         <a class="navbar-brand" href="/users/<%= current_user.slug %>">Home Page</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -28,9 +28,9 @@
               <a class="nav-link" href="/logout">Logout</a>
             </li>
           </ul>
-        </div>
-        <% end %>
+        </div>    
     </nav>
+    <% end %>
     <div class="flash">
       <% if flash[:warning] %>
         <h2 style="color: red"><%= flash[:warning] %></h2>
