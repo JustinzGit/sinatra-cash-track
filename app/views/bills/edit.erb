@@ -3,6 +3,6 @@
   <input type="hidden" name="_method" value="patch">
   <p>Provider: <input type="text" name="bill[provider]" value="<%= @bill.provider %>"></p>
   <p>Balance: <input type="number" min="0.00" step="0.01" name="bill[balance]" value="<%= @bill.balance %>"></p>
-  <p>Due Date: <input type="text" name="bill[duedate]" value="<%= @bill.duedate %>"></p>
+  <p>Due Date: <input type="date" name="bill[duedate]" value="<%= @bill.duedate %>"></p>
   <input type="submit" value="Edit Bill">
 </form>
