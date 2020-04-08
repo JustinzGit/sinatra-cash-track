@@ -8,7 +8,7 @@
 <div class="form-group">
   <form action="/bills" method="post">
     <p>Provider: <input type="text" class="form-control" name="bill[provider]"></p>
-    <p>Balance: <input type="text" class="form-control" name="bill[balance]"></p>
+    <p>Balance: <input type="number" min="0.00" step="0.01" class="form-control" name="bill[balance]"></p>
     <p>Due Date: <input type="text" class="form-control" name="bill[duedate]"></p>
     <p>Color:
       <select id="inputState" class="form-control" name="bill[color]">
