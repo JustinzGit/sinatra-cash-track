@@ -13,7 +13,7 @@
       <% @user.bills.each do |bill| %>
       <tr>
         <td><%= bill.provider %></td>
-        <td><%= bill.balance %></td>
+        <td>$<%= bill.balance %></td>
         <td style="color: <%= bill.color %>"><%= bill.duedate %></td>
       </tr>
       <% end %>
@@ -33,8 +33,8 @@
       <% @user.banks.each do |bank| %>
       <tr>
         <td><a href="<%= bank.url %>"><%= bank.name %></a></td>
-        <td><%= bank.checking_balance %></td>
-        <td><%= bank.savings_balance %></td>
+        <td>$<%= bank.checking_balance %></td>
+        <td>$<%= bank.savings_balance %></td>
       </tr>
       <% end %>
     </tbody>
@@ -54,8 +54,8 @@
       <% @user.creditcards.each do |creditcard| %>
       <tr>
         <td><%= creditcard.name %></td>
-        <td><%= creditcard.balance %></td>
-        <td><%= creditcard.credit %></td>
+        <td>$<%= creditcard.balance %></td>
+        <td>$<%= creditcard.credit %></td>
         <td><%= creditcard.duedate %></td>
       </tr>
       <% end %>
@@ -84,7 +84,7 @@
 
   <ul class="days">
   <% Calendar.days_in_month(1).times.with_index do |i| %>
-    <% if Calendar.todays_date?(i + 1) || Calendar.bill_day?(i + 1)   %>
+    <% if Calendar.todays_date?(i + 1) || Calendar.bill_day?(i + 1) %>
       <li><span class="active" style="background: <%= Calendar.bill_day?(i + 1) %>"><%= i + 1 %></span></li>
     <% else %>
       <li><%= i + 1 %></li>
