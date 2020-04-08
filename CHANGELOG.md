@@ -12,8 +12,9 @@
 
 - Change form to add new credit card
 - Ensure user enters Balance, interest rate, credit, and due date correctly
-- Change Creditcard Checking /Savings / Intrest rate / credit column type to integer 
+- Change Creditcard Checking /Savings / Intrest rate / credit column type to integer
 
+- Change urls to open new window
 - Fix day / month selector from Ruby Date method
 - Fix Tux, will load when nothing in config.ru
 - Use instance variable user or current_user method?
