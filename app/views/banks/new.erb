@@ -7,7 +7,13 @@
 <h1>Add a Bank Account</h1>
 <div class="form-group">
   <form action="/banks" method="post">
-    <p>Bank Name: <input type="text" name="bank[name]"></p>
+    <p>Existing Banks:
+      <select id="inputState" class="form-control" name="bank[name]">
+        <option selected disabled value>Select a Bank</option>
+        <% @banks.each do |bank| %>
+        <option value="<%= bank %>"><%= bank.name %></option>
+        <% end %>
+      </select></p>
     <p>Checking Balance: <input type="number" min="0.00" step="0.01" class="form-control" name="bank[checking_balance]" placeholder="$"></p>
     <p>Savings Balance: <input type="number" min="0.00" step="0.01" class="form-control" name="bank[savings_balance]" placeholder="$"></p>
     <input type="submit" value="Add Bank">
