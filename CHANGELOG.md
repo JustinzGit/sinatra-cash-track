@@ -1,15 +1,18 @@
 ## 04/08/2020
 #TODO
 - Change Bill Balance Input - ensure user enters correctly
+- Change Bill balance column type to integer
 - Change Bill Due Date Input - ensure user enters correctly
 - Change Bill edit form
 
 - Change Bank Form - allow user to select from existing banks
 - Change Bank Checking / Savings input - ensure user enters correctly
+- Change Bank Checking /Savings column type to integer
 - Change form to add new bank
 
 - Change form to add new credit card
 - Ensure user enters Balance, interest rate, credit, and due date correctly
+- Change Creditcard Checking /Savings / Intrest rate / credit column type to integer 
 
 - Fix day / month selector from Ruby Date method
 - Fix Tux, will load when nothing in config.ru
