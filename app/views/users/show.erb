@@ -68,6 +68,7 @@ padding: 5px;
 background: #1abc9c;
 color: white !important
 }
+
 </style>
 
 
@@ -88,7 +89,7 @@ color: white !important
       <tr>
         <td><%= bill.provider %></td>
         <td><%= bill.balance %></td>
-        <td><%= bill.duedate %></td>
+        <td style="color: <%= bill.color %>"><%= bill.duedate %></td>
       </tr>
       <% end %>
     </tbody>
