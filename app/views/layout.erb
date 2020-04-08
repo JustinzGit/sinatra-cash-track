@@ -7,15 +7,30 @@
     <link rel="stylesheet" href="/stylesheets/main.css">
   </head>
   <body>
-    <div class="navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <% if logged_in? %>
-        <a href="/users/<%= current_user.slug %>">Home</a>
-        <a href="/bills">Bills</a>
-        <a href="/banks">Banks</a>
-        <a href="/creditcards">Creditcards</a>
-        <a href="/logout">Logout</a>
-      <% end %>
-    </div>
+        <a class="navbar-brand" href="/users/<%= current_user.slug %>">Home Page</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/bills">Bills</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/banks">Banks</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/creditcards">Creditcards</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+          </ul>
+        </div>
+        <% end %>
+    </nav>
     <div class="flash">
       <% if flash[:warning] %>
         <h2 style="color: red"><%= flash[:warning] %></h2>

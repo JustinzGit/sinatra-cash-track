@@ -15,9 +15,11 @@ body {
   margin: 100px;
 }
 
-h1 {
+#home-title {
   text-align: center;
   font: francois one;
+  margin-top: 50px;
+  background-color: #eee;
 }
 
 h3 {
