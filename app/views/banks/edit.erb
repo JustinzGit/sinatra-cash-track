@@ -2,6 +2,7 @@
 <form action="/banks/<%= @bank.id %>" method="post">
   <input type="hidden" name="_method" value="patch">
   <p>Bank: <input type="text" name="bank[name]" value="<%= @bank.name %>"></p>
+  <p>Bank Site: <input type="url" name="bank[url]" class="form-control" value="<%= @bank.url %>"></p>
   <p>Checking: <input type="number" min="0.00" step="0.01" class="form-control" name="bank[checking_balance]" value="<%= @bank.checking_balance %>"></p>
   <p>Savings: <input type="number" min="0.00" step="0.01" class="form-control" name="bank[savings_balance]" value="<%= @bank.savings_balance %>"></p>
   <input type="submit" value="Edit Bank">
