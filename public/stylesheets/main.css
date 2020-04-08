@@ -15,7 +15,7 @@ body {
   margin: 100px;
 }
 
-#home-title {
+#page-title {
   text-align: center;
   font: francois one;
   margin-bottom: 25px;
@@ -33,6 +33,11 @@ h3 {
 }
 
 .table, th, td {
+  text-align: center;
+}
+
+.new-link{
+  margin-top: 20px;
   text-align: center;
 }
 

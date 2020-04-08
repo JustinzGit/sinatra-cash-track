@@ -5,23 +5,22 @@
 }
 </style>
 
-<h2 style="text-align: center"><%= current_user.username %>'s Bills</h2>
-  <p style="text-align: center"><a href="/bills/new">Add New Bill</a></p>
-  <table class="table">
-    <thead class="thead-dark">
+<h2 id="page-title"><%= current_user.username %>'s Bills</h2>
+  <table class="table table-striped">
+    <thead>
       <tr>
         <th scope="col">Provider</th>
         <th scope="col">Balance</th>
         <th scope="col">Due On</th>
         <th scope="col">Edit</th>
-        <th scope="col">Delete</th>
+        <th scope="col">Remove</th>
       </tr>
     </thead>
     <tbody>
       <% current_user.bills.each do |bill| %>
       <tr>
         <td><%= bill.provider %></td>
-        <td><%= bill.balance %></td>
+        <td>$<%= bill.balance %></td>
         <td><%= bill.duedate %></td>
         <td><a href="/bills/<%= bill.id %>/edit">Edit Bill</a></td>
         <td><form action="/bills/<%= bill.id %>" method="post">
@@ -32,3 +31,4 @@
       <% end %>
     </tbody>
   </table>
+  <p class="new-link"><a href="/bills/new">Add New Bill</a></p>
