@@ -4,6 +4,7 @@ class BanksController < ApplicationController
   end
 
   get '/banks/new' do
+    @banks = Bank.all
     erb :'/banks/new'
   end
 
