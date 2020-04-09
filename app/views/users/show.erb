@@ -5,8 +5,10 @@
         <div class="row justify-content-center">
         <div class="home-table">
         <% if @user.bills.empty? %>
-          <p>No bills to show</p>
-          <p>Click <a href="/bills/new">here</a> to get started</p>
+          <div class="no-info">
+            <p>No bills to show</p>
+            <p>Click <a href="/bills/new">here</a> to get started</p>
+          </div>
         <% else %>
           <h3>Current Bills</h3>
             <table class="table">
@@ -131,7 +133,7 @@
         <table class="table">
           <thead class="thead-dark">
             <tr>
-              <th scope="col">Money</th>
+              <th scope="col">Checking Total</th>
               <th scope="col">Bills</th>
               <th scope="col">Credit Debt</th>
               <th scope="col">Available Cash</th>
