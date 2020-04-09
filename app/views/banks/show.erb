@@ -1,34 +1,29 @@
-<style>
-.table {
-  width: 80%;
-  margin: auto;
-}
-</style>
-
-<h2 style="text-align: center"><%= current_user.username %>'s Banks</h2>
-  <p style="text-align: center"><a href="/banks/new">Add New Bank</a></p>
-  <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">Bank</th>
-        <th scope="col">Checking</th>
-        <th scope="col">Savings</th>
-        <th scope="col">Edit</th>
-        <th scope="col">Delete</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% current_user.banks.each do |bank| %>
-      <tr>
-        <td><a href="<%= bank.url %>"><%= bank.name %></a></td>
-        <td><%= bank.checking_balance %></td>
-        <td><%= bank.savings_balance %></td>
-        <td><a href="/banks/<%= bank.id %>/edit">Edit Bank</a></td>
-        <td><form action="/banks/<%= bank.id %>" method="post">
-          <input type="hidden" name="_method" value="delete">
-          <input type="submit" value="Delete Bank">
-        </form></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
+<h2 id="page-title"><%= current_user.username %>'s Banks</h2>
+  <div class="show-table">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Bank</th>
+          <th scope="col">Checking</th>
+          <th scope="col">Savings</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% current_user.banks.each do |bank| %>
+        <tr>
+          <td><a href="<%= bank.url %>" target="_blank"><%= bank.name %></a></td>
+          <td>$<%= bank.checking_balance %></td>
+          <td>$<%= bank.savings_balance %></td>
+          <td><a href="/banks/<%= bank.id %>/edit">Edit Bank</a></td>
+          <td><form action="/banks/<%= bank.id %>" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="Delete Bank">
+          </form></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <p class="new-link"><a href="/banks/new">Add New Bank</a></p>
