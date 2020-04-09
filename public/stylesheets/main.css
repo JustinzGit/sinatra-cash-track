@@ -3,18 +3,15 @@
   box-sizing: border-box;
 }
 
-/* Targets home page columns */
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
+
+
+.home-page
+{
+  margin-left: 200px;
+  margin-right: 200px;
 }
 
-@media screen and (max-width: 1000px) {
-  .column {
-    width: 100%;
-  }
-}
+
 
 #page-title {
   text-align: center;
@@ -50,12 +47,21 @@
   margin: auto;
 }
 
+/* CSS for Calendar */
+/* Edited from w3schools.com */
+.col #calendar {
+  min-width: 550px;
+  max-width: 550px;
+  /* margin-right: auto;
+  margin-left: auto; */
+}
 
 /* Targets tables on home page */
 .home-table{
-  margin-left: auto;
-  margin-right: 50px;
+  /* margin-left: auto;
+  margin-right: auto; */
 }
+
 
 .home-table, th, td {
   text-align: center;
@@ -68,8 +74,8 @@ h3 {
   font: Segoe UI;
   background-color: #eee;
   width: 550px;
-  margin-left: auto;
-  margin-right: 50px;
+  /* margin-left: auto;
+  margin-right: 50px; */
 }
 
 
@@ -88,13 +94,7 @@ h3 {
 
 
 
-/* CSS for Calendar */
-/* Edited from w3schools.com */
-#calendar {
-  margin-right: 100%;
-  width: 550px;
-  margin-left: 50px;
-}
+
 
 .month {
   width: 100%;
