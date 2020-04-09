@@ -58,9 +58,9 @@ class ApplicationController < Sinatra::Base
       false
     end
 
-    def bill_day?(day)
+    def bill_day?(day, month)
       current_user.bills.each do |bill|
-        if Date._parse(bill.duedate)[:mday] == day
+        if Date._parse(bill.duedate)[:mday] == day && Date._parse(bill.duedate)[:mon].to_s == month
           return bill.color
         end
       end
@@ -89,6 +89,6 @@ class ApplicationController < Sinatra::Base
         credit_debt += card.balance
       end
       credit_debt
-    end 
+    end
   end
 end

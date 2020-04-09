@@ -104,7 +104,7 @@
             <div class="month">
               <ul>
                 <li>// Cash Track //</li>
-                <li><%= Date.today.strftime("%B") %>,<%= Date.today.strftime("%e").strip %>,<%= Date.today.strftime("%Y") %></li>
+                <li><%= Date.today.strftime("%B") %> <%= Date.today.strftime("%e").strip %>, <%= Date.today.strftime("%Y") %></li>
               </ul>
             </div>
 
@@ -120,8 +120,8 @@
 
             <ul class="days">
             <% days_in_month(1).times.with_index do |i| %>
-              <% if todays_date?(i + 1) || bill_day?(i + 1) %>
-                <li><span class="active" style="background: <%= bill_day?(i + 1) %>"><%= i + 1 %></span></li>
+              <% if todays_date?(i + 1) || bill_day?(i + 1, Date.today.strftime("%-m")) %>
+                <li><span class="active" style="background: <%= bill_day?(i + 1, Date.today.strftime("%-m"))%>"><%= i + 1 %></span></li>
               <% else %>
                 <li><%= i + 1 %></li>
               <% end %>
