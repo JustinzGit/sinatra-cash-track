@@ -3,6 +3,7 @@
 #TODO
 - calendar is displaying other users duedates
 - inline style to flash messages
+- Bonus - allow user to edit username?
 
 ## 04/08/2020
 #ADDED
