@@ -1,11 +1,6 @@
-<style>
-.table {
-  width: 80%;
-  margin: auto;
-}
-</style>
 
 <h2 id="page-title"><%= current_user.username %>'s Bills</h2>
+<div class="show-table">
   <table class="table table-striped">
     <thead>
       <tr>
@@ -31,4 +26,5 @@
       <% end %>
     </tbody>
   </table>
-  <p class="new-link"><a href="/bills/new">Add New Bill</a></p>
+</div>
+<p class="new-link"><a href="/bills/new">Add New Bill</a></p>
