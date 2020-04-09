@@ -17,8 +17,8 @@
       <tr>
         <td><%= creditcard.name %></td>
         <td>$<%= creditcard.balance %></td>
-        <td><%= creditcard.intrest_rate %>%</td>
         <td>$<%= creditcard.credit %></td>
+        <td><%= creditcard.intrest_rate %>%</td>
         <td><%= creditcard.duedate %></td>
         <td><a href="/creditcards/<%= creditcard.id %>/edit">Edit Card</a></td>
         <td><form action="/creditcards/<%= creditcard.id %>" method="post">
