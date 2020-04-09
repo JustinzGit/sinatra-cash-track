@@ -74,5 +74,13 @@ class ApplicationController < Sinatra::Base
       end
       bill_total
     end
+
+    def checking_total
+      checking_total = 0
+      current_user.banks.each do |bank|
+        checking_total += bank.checking_balance
+      end
+      checking_total
+    end
   end
 end
