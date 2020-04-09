@@ -16,7 +16,7 @@
   }
 }
 
-#home-title {
+#page-title {
   text-align: center;
   font: francois one;
   margin-bottom: 25px;
@@ -31,6 +31,17 @@
   min-width: 500px;
 }
 
+.newforms, .form-group {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Targets width of form inputs */
+.form-control {
+    width: 200px;
+  }
 
 
 /* Targets show tables */
