@@ -1,7 +1,6 @@
 <h2 id="page-title">Provide Bank Details</h2>
 <div class="row justify-content-center">
   <div class="form-group">
-    <p>Need to fetch details? <a href="<%= @bank.url %>"><%= @bank.name %></a></p>
     <form action="/banks" method="post">
       <p>Bank Name: <input type="text" name="bank[name]" class="form-control"></p>
       <p>Bank Site: <input type="url" name="bank[url]" class="form-control" value="http://" placeholder="http://"></p>
