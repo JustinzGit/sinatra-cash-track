@@ -1,5 +1,9 @@
 ## 04/09/2020
 
+#TODO
+- calendar is displaying other users duedates
+- inline style to flash messages
+
 ## 04/08/2020
 #ADDED
 - Boostrap CSS to all pages
