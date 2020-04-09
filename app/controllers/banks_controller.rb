@@ -1,10 +1,11 @@
 class BanksController < ApplicationController
   get '/banks' do
+    redirect_login_if_not_logged_in
     erb :'/banks/show'
   end
 
   get '/banks/new' do
-    @banks = Bank.all
+    redirect_login_if_not_logged_in
     erb :'/banks/new'
   end
 
@@ -15,6 +16,7 @@ class BanksController < ApplicationController
 
   get '/banks/:id/edit' do
     @bank = Bank.find(params[:id])
+    redirect_if_not_authorized(current_user.banks, @bank)
     erb :'/banks/edit'
   end
 
