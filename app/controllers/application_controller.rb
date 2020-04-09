@@ -40,5 +40,31 @@ class ApplicationController < Sinatra::Base
         redirect "/users/#{current_user.slug}"
       end
     end
+
+    def days_in_month(month)
+      if [1,3,5,7,8,10,12].include?(month)
+        return 31
+      elsif [4,6,9,11].include?(month)
+        return 30
+      else
+        return 28
+      end
+    end
+
+    def todays_date?(day)
+      if day == Date.today.strftime("%e").strip.to_i
+        return true
+      end
+      false
+    end
+
+    def bill_day?(day)
+      current_user.bills.each do |bill|
+        if Date._parse(bill.duedate)[:mday] == day
+          return bill.color
+        end
+      end
+      false
+    end
   end
 end
