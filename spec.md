@@ -2,18 +2,28 @@
 
 Specs:
 - [x] Use Sinatra to build the app
+- The Sinatra Ruby gem is included in the Gemfile
+- In ./app/controllers, Sinatra routes are defined to handle HTTP requests and responses
 
-- [ ] Use ActiveRecord for storing information in a database
+- [X] Use ActiveRecord for storing information in a database
+- The ActiveRecord Ruby gem is included in the Gemfile
+- In ./config/environment a connection is established between ActiveRecord and a SQLite database
 
-- [ ] Include more than one model class (e.g. User, Post, Category)
+- [X] Include more than one model class (e.g. User, Post, Category)
+- My models include User, Bank, Bill, Creditcard, UserBank
 
-- [ ] Include at least one has_many relationship on your User model (e.g. User has_many Posts)
+- [X] Include at least one has_many relationship on your User model (e.g. User has_many Posts)
+- User has_many Bills, User has_many Creditcards...
 
-- [ ] Include at least one belongs_to relationship on another model (e.g. Post belongs_to User)
+- [X] Include at least one belongs_to relationship on another model (e.g. Post belongs_to User)
+- Creditcard belongs_to User, Creditcard belongs_to Bank...
 
-- [ ] Include user accounts with unique login attribute (username or email)
+- [X] Include user accounts with unique login attribute (username or email)
+- Users email must be unique
+- No too users can use the same email
 
-- [ ] Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying
+- [X] Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying
+- Bills, banks, and Creditcard all have routes for Creating, Reading, Updating and Destroying
 
 - [ ] Ensure that users can't modify content created by other users
 
