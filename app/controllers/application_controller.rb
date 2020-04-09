@@ -82,5 +82,13 @@ class ApplicationController < Sinatra::Base
       end
       checking_total
     end
+
+    def credit_debt
+      credit_debt = 0
+      current_user.creditcards.each do |card|
+        credit_debt += card.balance
+      end
+      credit_debt
+    end 
   end
 end
