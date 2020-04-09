@@ -3,7 +3,21 @@
   box-sizing: border-box;
 }
 
+.no-info{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-style: solid;
+  border-radius: 100px;
+  border-color: #00b3e6;
+  background-color: #00b3e6;
+  color: white;
+  font: francois one;
+  font-size: 15px;
+}
 
+.no-info a{
+  color: black;
+}
 
 .home-page
 {

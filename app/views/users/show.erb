@@ -32,10 +32,10 @@
 
     <div class="home-table">
       <% if @user.banks.empty? %>
-        <br>
-        <br>
-        <p>No banks to show</p>
-        <p>Click <a href="/banks/new">here</a> to get started </p>
+        <div class="no-info">
+          <p>No banks to show</p>
+          <p>Click <a href="/banks/new">here</a> to get started </p>
+        </div>
       <% else %>
         <h3>Bank Information</h3>
           <table class="table">
@@ -62,10 +62,10 @@
 
       <div class="home-table">
       <% if @user.creditcards.empty? %>
-        <br>
-        <br>
-        <p>No creditcards to show</p>
-        <p>Click <a href="/creditcards/new">here</a> to get started</p>
+        <div class="no-info">
+          <p>No creditcards to show</p>
+          <p>Click <a href="/creditcards/new">here</a> to get started</p>
+        </div>
       <% else %>
         <h3>Credit Card Information</h3>
             <table class="table">
