@@ -23,7 +23,6 @@
 }
 
 
-
 /* body {
   margin: 100px;
 } */
@@ -43,7 +42,27 @@
   min-width: 500px;
 }
 
-/* Table Headers */
+
+
+/* Targets show tables */
+.show-table table{
+  width: 40%;
+  margin: auto;
+}
+
+
+/* Targets tables on home page */
+.home-table{
+  margin-left: auto;
+  margin-right: 50px;
+}
+
+.home-table, th, td {
+  text-align: center;
+  width: 550px;
+}
+
+/* Targets table headers on home page */
 h3 {
   text-align: center;
   font: Segoe UI;
@@ -53,20 +72,21 @@ h3 {
   margin-right: 50px;
 }
 
-.table{
-  margin-left: auto;
-  margin-right: 50px;
-}
 
-.table, th, td {
-  text-align: center;
-  width: 550px;
-}
 
+
+
+
+/* Targets links to add bill, bank or creditcard */
 .new-link{
   margin-top: 20px;
   text-align: center;
 }
+
+
+
+
+
 
 /* CSS for Calendar */
 /* Edited from w3schools.com */
