@@ -1,9 +1,9 @@
-/* browser accounts for border/padding when elements width / height is specified */
+/* Browser accounts for border/padding when elements width / height is specified */
 * {
   box-sizing: border-box;
 }
 
-/* CSS for pages columns */
+/* Targets home page columns */
 .column {
   float: left;
   width: 50%;
@@ -16,18 +16,7 @@
   }
 }
 
-#calendar {
-  margin-right: 100%;
-  width: 550px;
-  margin-left: 50px;
-}
-
-
-/* body {
-  margin: 100px;
-} */
-
-#page-title {
+#home-title {
   text-align: center;
   font: francois one;
   margin-bottom: 25px;
@@ -90,6 +79,12 @@ h3 {
 
 /* CSS for Calendar */
 /* Edited from w3schools.com */
+#calendar {
+  margin-right: 100%;
+  width: 550px;
+  margin-left: 50px;
+}
+
 .month {
   width: 100%;
   background: #00b3e6;
