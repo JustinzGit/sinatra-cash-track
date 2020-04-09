@@ -4,6 +4,7 @@
 - calendar is displaying other users duedates
 - inline style to flash messages
 - Bonus - allow user to edit username?
+- Do something with paid? column of bill
 
 ## 04/08/2020
 #ADDED
