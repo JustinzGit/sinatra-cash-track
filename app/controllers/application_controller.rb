@@ -35,10 +35,10 @@ class ApplicationController < Sinatra::Base
     end
 
     def redirect_if_not_authorized(collection, instance)
-      if !logged_in || !current_user.collection.include?(instance)
+      if !logged_in? || !collection.include?(instance)
         flash[:warning] = "You dont have access to this page"
         redirect "/users/#{current_user.slug}"
-      end 
+      end
     end
   end
 end
