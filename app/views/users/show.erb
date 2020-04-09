@@ -117,9 +117,9 @@
           </ul>
 
           <ul class="days">
-          <% Calendar.days_in_month(1).times.with_index do |i| %>
-            <% if Calendar.todays_date?(i + 1) || Calendar.bill_day?(i + 1) %>
-              <li><span class="active" style="background: <%= Calendar.bill_day?(i + 1) %>"><%= i + 1 %></span></li>
+          <% days_in_month(1).times.with_index do |i| %>
+            <% if todays_date?(i + 1) || bill_day?(i + 1) %>
+              <li><span class="active" style="background: <%= bill_day?(i + 1) %>"><%= i + 1 %></span></li>
             <% else %>
               <li><%= i + 1 %></li>
             <% end %>
