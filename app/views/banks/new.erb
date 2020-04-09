@@ -1,16 +1,12 @@
-<style>
-.form-control {
-    width: 200px;
-  }
-</style>
-
-<h1>Add a Bank Account</h1>
-<div class="form-group">
-  <form action="/banks" method="post">
-    <p>Bank Name: <input type="text" name="bank[name]" class="form-control"></p>
-    <p>Bank Site: <input type="url" name="bank[url]" class="form-control" value="http://" placeholder="http://"></p>
-    <p>Checking Balance: <input type="number" min="0.00" step="0.01" class="form-control" name="bank[checking_balance]" placeholder="$"></p>
-    <p>Savings Balance: <input type="number" min="0.00" step="0.01" class="form-control" name="bank[savings_balance]" placeholder="$"></p>
-    <input type="submit" value="Add Bank">
-  </form>
+<h2 id="page-title">Provide Bank Details</h2>
+<div class="row justify-content-center">
+  <div class="form-group">
+    <form action="/banks" method="post">
+      <p>Bank Name: <input type="text" name="bank[name]" class="form-control"></p>
+      <p>Bank Site: <input type="url" name="bank[url]" class="form-control" value="http://" placeholder="http://"></p>
+      <p>Checking Balance: <input type="number" min="0.00" step="0.01" class="form-control" name="bank[checking_balance]" placeholder="$"></p>
+      <p>Savings Balance: <input type="number" min="0.00" step="0.01" class="form-control" name="bank[savings_balance]" placeholder="$"></p>
+      <input type="submit" value="Add Bank">
+    </form>
+  </div>
 </div>
