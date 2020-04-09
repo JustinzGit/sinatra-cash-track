@@ -14,6 +14,8 @@ class SessionsController < ApplicationController
     # Checks that all attributes have been filled, create user account and log user in
     elsif params[:user][:username] != "" && params[:user][:email] != "" && params[:user][:password] != ""
       user = User.create(params[:user])
+
+      # Log user in
       session[:user_id] = user.id
       flash[:notice] = "Welcome to Budget Tracker!"
       redirect "/users/#{user.slug}"
@@ -21,6 +23,7 @@ class SessionsController < ApplicationController
   end
 
   get '/login' do
+    redirect_home_if_logged_in
     erb :'/sessions/login'
   end
 
