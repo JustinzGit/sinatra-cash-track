@@ -1,14 +1,7 @@
-<style>
-.table {
-  width: 80%;
-  margin: auto;
-}
-</style>
-
-<h2 style="text-align: center"><%= current_user.username %>'s Credit Cards</h2>
-  <p style="text-align: center"><a href="/creditcards/new">Add New Card</a></p>
-  <table class="table">
-    <thead class="thead-dark">
+<h2 id="page-title"><%= current_user.username %>'s Creditcards</h2>
+<div class="show-table">
+  <table class="table table-striped">
+    <thead
       <tr>
         <th scope="col">Name</th>
         <th scope="col">Balance</th>
@@ -23,9 +16,9 @@
       <% current_user.creditcards.each do |creditcard| %>
       <tr>
         <td><%= creditcard.name %></td>
-        <td><%= creditcard.balance %></td>
-        <td><%= creditcard.intrest_rate %></td>
-        <td><%= creditcard.credit %></td>
+        <td>$<%= creditcard.balance %></td>
+        <td><%= creditcard.intrest_rate %>%</td>
+        <td>$<%= creditcard.credit %></td>
         <td><%= creditcard.duedate %></td>
         <td><a href="/creditcards/<%= creditcard.id %>/edit">Edit Card</a></td>
         <td><form action="/creditcards/<%= creditcard.id %>" method="post">
@@ -36,3 +29,5 @@
       <% end %>
     </tbody>
   </table>
+</div>
+<p class="new-link"><a href="/creditcards/new">Add New Card</a></p>
