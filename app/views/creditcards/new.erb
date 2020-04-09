@@ -1,17 +1,13 @@
-<style>
-.form-control {
-    width: 200px;
-  }
-</style>
-
-<h1>Add a new creditcard</h1>
-<div class="form-group">
-  <form action="/creditcards" method="post">
-    <p>Card Name: <input type="text" class="form-control" name="creditcard[name]"></p>
-    <p>Intrest Rate: <input type="number" min="0" step="0.01" class="form-control" name="creditcard[intrest_rate]" placeholder="%"></p>
-    <p>Balance: <input type="number" min="0.00" step="0.01" class="form-control" name="creditcard[balance]" placeholder="$"></p>
-    <p>Credit: <input type="number" min="0.00" step="0.01" class="form-control" name="creditcard[credit]" placeholder="$"></p>
-    <p>Minimum Payment Due: <input type="date" class="form-control" name="creditcard[duedate]"></p>
-    <input type="submit" value="Add Card">
-  </form>
+<h2 id="page-title">Provide Card Details</h2>
+<div class="row justify-content-center">
+  <div class="form-group">
+    <form action="/creditcards" method="post">
+      <p>Card Name: <input type="text" class="form-control" name="creditcard[name]"></p>
+      <p>Balance: <input type="number" min="0.00" step="0.01" class="form-control" name="creditcard[balance]" placeholder="$"></p>
+      <p>Credit: <input type="number" min="0.00" step="0.01" class="form-control" name="creditcard[credit]" placeholder="$"></p>
+      <p>Intrest Rate: <input type="number" min="0" step="0.01" class="form-control" name="creditcard[intrest_rate]" placeholder="%"></p>
+      <p>Minimum Payment Due: <input type="date" class="form-control" name="creditcard[duedate]"></p>
+      <input type="submit" value="Add Card">
+    </form>
+  </div>
 </div>
