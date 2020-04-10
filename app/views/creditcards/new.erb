@@ -2,11 +2,11 @@
 <div class="row justify-content-center">
   <div class="form-group">
     <form action="/creditcards" method="post">
-      <p>Card Name: <input type="text" class="form-control" name="creditcard[name]"></p>
-      <p>Balance: <input type="number" min="0.00" step="0.01" class="form-control" name="creditcard[balance]" placeholder="$"></p>
-      <p>Credit: <input type="number" min="0.00" step="0.01" class="form-control" name="creditcard[credit]" placeholder="$"></p>
-      <p>Intrest Rate: <input type="number" min="0" step="0.01" class="form-control" name="creditcard[intrest_rate]" placeholder="%"></p>
-      <p>Minimum Payment Due: <input type="date" class="form-control" name="creditcard[duedate]"></p>
+      <p>Card Name: <input type="text" class="form-control" name="creditcard[name]" required></p>
+      <p>Balance: <input type="number" min="0.00" step="0.01" class="form-control" name="creditcard[balance]" placeholder="$" required></p>
+      <p>Credit: <input type="number" min="0.00" step="0.01" class="form-control" name="creditcard[credit]" placeholder="$" required></p>
+      <p>Intrest Rate: <input type="number" min="0" step="0.01" class="form-control" name="creditcard[intrest_rate]" placeholder="%"required></p>
+      <p>Minimum Payment Due: <input type="date" class="form-control" name="creditcard[duedate]" required></p>
       <input type="submit" value="Add Card">
     </form>
   </div>
