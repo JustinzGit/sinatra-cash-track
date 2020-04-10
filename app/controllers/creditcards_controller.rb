@@ -11,6 +11,7 @@ class CreditcardsController < ApplicationController
 
   post '/creditcards' do
     current_user.creditcards << Creditcard.create(params[:creditcard])
+    flash[:notice] = "You've successfully added a new card!"
     redirect '/creditcards'
   end
 
@@ -23,12 +24,14 @@ class CreditcardsController < ApplicationController
   patch '/creditcards/:id' do
     creditcard = Creditcard.find(params[:id])
     creditcard.update(params[:creditcard])
+    flash[:notice] = "#{creditcard.name} was successfully updated!"
     redirect '/creditcards'
   end
 
   delete '/creditcards/:id' do
     creditcard = Creditcard.find(params[:id])
     creditcard.destroy
+    flash[:notice] = "#{creditcard.name} was successfully deleted!"
     redirect '/creditcards'
   end
 end

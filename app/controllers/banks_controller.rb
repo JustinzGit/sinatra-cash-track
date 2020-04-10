@@ -11,6 +11,7 @@ class BanksController < ApplicationController
 
   post '/banks' do
     current_user.banks << Bank.create(params[:bank])
+    flash[:notice] = "You've successfully added a new bank!"
     redirect '/banks'
   end
 
@@ -23,12 +24,14 @@ class BanksController < ApplicationController
   patch '/banks/:id' do
     bank = Bank.find(params[:id])
     bank.update(params[:bank])
+    flash[:notice] = "#{bank.name} was successfully updated!"
     redirect '/banks'
   end
 
   delete '/banks/:id' do
     bank = Bank.find(params[:id])
     bank.destroy
+    flash[:notice] = "#{bank.name} was successfully deleted!"
     redirect '/banks'
   end
 end

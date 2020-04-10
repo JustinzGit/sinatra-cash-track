@@ -11,6 +11,7 @@ class BillsController < ApplicationController
 
   post '/bills' do
     current_user.bills << Bill.create(params[:bill])
+    flash[:notice] = "You've successfully added a new bill!"
     redirect '/bills'
   end
 
@@ -23,12 +24,14 @@ class BillsController < ApplicationController
   patch '/bills/:id' do
     bill = Bill.find(params[:id])
     bill.update(params[:bill])
+    flash[:notice] = "#{bill.provider} was successfully updated!"
     redirect '/bills'
   end
 
   delete '/bills/:id' do
     bill = Bill.find(params[:id])
     bill.destroy
+    flash[:notice] = "#{bill.provider} was successfully deleted!"
     redirect '/bills'
   end
 end
