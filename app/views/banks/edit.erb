@@ -4,10 +4,10 @@
     <p>Need to fetch details? <a href="<%= @bank.url %>" target="blank"><%= @bank.name %></a></p>
     <form action="/banks/<%= @bank.id %>" method="post">
       <input type="hidden" name="_method" value="patch">
-      <p>Bank: <input type="text" name="bank[name]" class="form-control" value="<%= @bank.name %>"></p>
-      <p>Bank Site: <input type="url" name="bank[url]" class="form-control" value="<%= @bank.url %>"></p>
-      <p>Checking: <input type="number" min="0.00" step="0.01" class="form-control" name="bank[checking_balance]" value="<%= @bank.checking_balance %>"></p>
-      <p>Savings: <input type="number" min="0.00" step="0.01" class="form-control" name="bank[savings_balance]" value="<%= @bank.savings_balance %>"></p>
+      <p>Bank: <input type="text" name="bank[name]" class="form-control" value="<%= @bank.name %>" required></p>
+      <p>Bank Site: <input type="url" name="bank[url]" class="form-control" value="<%= @bank.url %>" required></p>
+      <p>Checking: <input type="number" min="0.00" step="0.01" class="form-control" name="bank[checking_balance]" value="<%= @bank.checking_balance %>" required></p>
+      <p>Savings: <input type="number" min="0.00" step="0.01" class="form-control" name="bank[savings_balance]" value="<%= @bank.savings_balance %>" required></p>
       <input type="submit" value="Edit Bank">
     </form>
   </div>
