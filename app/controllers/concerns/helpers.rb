@@ -22,7 +22,7 @@ module Helpers
 
   def redirect_if_not_authorized(collection, instance)
     if !logged_in? || !collection.include?(instance)
-      flash[:warning] = "You dont have access to this page"
+      flash[:warning] = "You dont have access to this page!"
       redirect "/users/#{current_user.slug}"
     end
   end
