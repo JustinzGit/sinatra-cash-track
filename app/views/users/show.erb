@@ -115,6 +115,11 @@
             </ul>
 
             <ul class="days">
+            <!-- ensure first of month starts on correct day -->
+            <% days_before_first_of_month.times do %>
+              <li> </li>
+            <% end %>
+
             <% (1..days_in_current_month).each do |i| %>
               <% if todays_weekday?(i) || bill_day?(i) %>
                 <li><span class="active" style="background: <%= bill_color(i) %>"><%= i %></span></li>

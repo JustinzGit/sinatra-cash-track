@@ -39,6 +39,12 @@ module Helpers
     end
   end
 
+  # returns number of days before first of month
+  def days_before_first_of_month
+    first_of_month = Date.today - Date.today.mday + 1
+    first_of_month.strftime("%u").to_i - 1
+  end
+
   def current_date
     "#{Date.today.strftime("%B")}  #{Date.today.strftime("%e").strip}, #{Date.today.strftime("%Y")}"
   end
