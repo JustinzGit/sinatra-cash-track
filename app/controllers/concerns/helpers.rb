@@ -27,10 +27,11 @@ module Helpers
     end
   end
 
-  def days_in_month(month)
-    if [1,3,5,7,8,10,12].include?(month)
+  def days_in_current_month
+    current_month = Date.today.strftime("%-m").to_i
+    if [1,3,5,7,8,10,12].include?(current_month)
       return 31
-    elsif [4,6,9,11].include?(month)
+    elsif [4,6,9,11].include?(current_month)
       return 30
     else
       return 28
