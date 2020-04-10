@@ -1,10 +1,15 @@
-## 04/09/2020
+## 01/10/2020
 
 #TODO
-- calendar is displaying other users duedates
-- inline style to flash messages
 - Bonus - allow user to edit username?
 - Do something with paid? column of bill
+
+## 04/09/2020
+#ADDED
+- additional bootstrap styling
+
+#CHANGED
+- calendar so that only logged in users bill dates are displayed
 
 ## 04/08/2020
 #ADDED
