@@ -11,10 +11,9 @@ class SessionsController < ApplicationController
       flash[:warning] = "That email has already been taken"
       redirect '/signup'
 
-    # Checks that all attributes have been filled, create user account and log user in
-    elsif params[:user][:username] != "" && params[:user][:email] != "" && params[:user][:password] != ""
+    # Create user account and log user in
+    else
       user = User.create(params[:user])
-
       # Log user in
       session[:user_id] = user.id
       flash[:notice] = "Welcome to Budget Tracker!"
