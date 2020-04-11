@@ -25,19 +25,23 @@ Specs:
 - [X] Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying
 - Bills, banks, and Creditcard all have routes for Creating, Reading, Updating and Destroying
 
-- [ ] Ensure that users can't modify content created by other users
+- [X] Ensure that users can't modify content created by other users
+- A redirect if not authorized method was included to prevent users from modifying other users content
+- A user can only edit or delete his own collection of bills, banks, and creditcards
 
-- [ ] Include user input validations
+- [X] Include user input validations
+- The required html attribute was added to all forms to ensure user has filled in information prior to form submission
 
-- [ ] BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)
+- [X] BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)
+- The Sinatra Flash extension was used to display warning and update messages between HTTP requests
 
-- [ ] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
+- [X] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
 
 Confirm
-- [ ] You have a large number of small Git commits
+- [X] You have a large number of small Git commits
 
-- [ ] Your commit messages are meaningful
+- [X] Your commit messages are meaningful
 
-- [ ] You made the changes in a commit that relate to the commit message
+- [X] You made the changes in a commit that relate to the commit message
 
-- [ ] You don't include changes in a commit that aren't related to the commit message
+- [X] You don't include changes in a commit that aren't related to the commit message
