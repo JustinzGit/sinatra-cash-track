@@ -2,6 +2,11 @@
 #ADDED
 - readme and code of conduct file
 
+#TODO
+- allow user to edit bill color
+- yellow looks bad on calendar
+- round balance to proper decimal places
+
 ## 04/10/2020
 #ADDED
 - additional methods to helpers to refactor code from users show page
