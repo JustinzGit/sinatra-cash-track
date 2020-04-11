@@ -1,8 +1,11 @@
-## 01/10/2020
+## 04/11/2020
+#ADDED
+- readme and code of conduct file
 
-#TODO
-- Bonus - allow user to edit username?
-- Do something with paid? column of bill
+## 04/10/2020
+#ADDED
+- additional methods to helpers to refactor code from users show page
+- concerns folder, moved helper methods to separate file, into module
 
 ## 04/09/2020
 #ADDED
