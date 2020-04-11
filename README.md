@@ -13,10 +13,10 @@ User information is stored in a SQLite database and manipulated using ActiveReco
 - by typing `localhost:9393` into your browser you will access the home page of the application
 
 ## Contributing
-Bug reports and pull requests are welcome on GitHub at https://github.com/JustinzGit/sinatra-budget-app. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/JustinzGit/sinatra-cash-track. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## Code of Conduct
-Everyone interacting in the Cash Track project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/JustinzGit/sinatra-budget-app/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Cash Track project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/JustinzGit/sinatra-cash-track/blob/master/CODE_OF_CONDUCT.md).
 
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
