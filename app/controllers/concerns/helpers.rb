@@ -80,7 +80,7 @@ module Helpers
     current_user.bills.each do |bill|
       bill_total += bill.balance
     end
-    bill_total
+    bill_total.to_d
   end
 
   # Returns sum of money in current users checking
@@ -89,7 +89,7 @@ module Helpers
     current_user.banks.each do |bank|
       checking_total += bank.checking_balance
     end
-    checking_total
+    checking_total.to_d
   end
 
   # Returns sum of current users credit card debt
@@ -98,6 +98,6 @@ module Helpers
     current_user.creditcards.each do |card|
       credit_debt += card.balance
     end
-    credit_debt
+    credit_debt.to_d
   end
 end
