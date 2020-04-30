@@ -1,6 +1,8 @@
 class BillsController < ApplicationController
   get '/bills' do
     redirect_login_if_not_logged_in
+    @bills = current_user.bills
+    @bills = @bills.sort{|a,b| a.duedate <=> b.duedate} if params[:sort]
     erb :'/bills/show'
   end
 

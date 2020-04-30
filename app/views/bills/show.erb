@@ -12,7 +12,7 @@
       </tr>
     </thead>
     <tbody>
-      <% current_user.bills.each do |bill| %>
+      <% @bills.each do |bill| %>
       <tr>
         <td><%= bill.provider %></td>
         <td>$<%= bill.balance %></td>
@@ -28,3 +28,4 @@
   </table>
 </div>
 <p class="new-link"><a href="/bills/new">Add New Bill</a></p>
+<p class="new-link"><a href="/bills?sort=true">Sort Bills by Due Date</a></p>
