@@ -31,6 +31,7 @@ class BanksController < ApplicationController
 
   delete '/banks/:id' do
     bank = Bank.find(params[:id])
+    redirect_if_not_authorized(current_user.banks, bank)
     bank.destroy
     flash[:notice] = "#{bank.name} was successfully deleted!"
     redirect '/banks'

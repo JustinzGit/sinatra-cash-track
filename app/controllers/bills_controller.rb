@@ -33,6 +33,7 @@ class BillsController < ApplicationController
 
   delete '/bills/:id' do
     bill = Bill.find(params[:id])
+    redirect_if_not_authorized(current_user.bills, bill)
     bill.destroy
     flash[:notice] = "#{bill.provider} was successfully deleted!"
     redirect '/bills'
