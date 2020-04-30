@@ -25,6 +25,7 @@ class BillsController < ApplicationController
 
   patch '/bills/:id' do
     bill = Bill.find(params[:id])
+    redirect_if_not_authorized(current_user.bills, bill)
     bill.update(params[:bill])
     flash[:notice] = "#{bill.provider} was successfully updated!"
     redirect '/bills'

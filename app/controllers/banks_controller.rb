@@ -23,6 +23,7 @@ class BanksController < ApplicationController
 
   patch '/banks/:id' do
     bank = Bank.find(params[:id])
+    redirect_if_not_authorized(current_user.banks, bank)
     bank.update(params[:bank])
     flash[:notice] = "#{bank.name} was successfully updated!"
     redirect '/banks'

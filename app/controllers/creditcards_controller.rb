@@ -23,6 +23,7 @@ class CreditcardsController < ApplicationController
 
   patch '/creditcards/:id' do
     creditcard = Creditcard.find(params[:id])
+      redirect_if_not_authorized(current_user.creditcards, creditcard)
     creditcard.update(params[:creditcard])
     flash[:notice] = "#{creditcard.name} was successfully updated!"
     redirect '/creditcards'
