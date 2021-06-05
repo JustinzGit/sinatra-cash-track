@@ -3,7 +3,7 @@ Cash Track is a Sinatra based web application that allows a user to signup and t
 A user has the ability to track bills, credit cards, and available cash in banking accounts.
 
 ## Installation
-- Fork and clone this repository
+- Clone this repository
 - Be sure to have RubyGems installed (Ruby version 1.9+ comes with RubyGems by default)
 - Install the ruby gem `bundler` by running `gem install bundler` from the command line
 - Install application dependencies by running `bundle install` from the applications main directory
